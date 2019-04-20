@@ -5,7 +5,7 @@ import random
 
  
 demand_level = 8
-MethodName = 'FTC'
+MethodName = 'HTSCN'
 
 ###loops
 loop_name = 'loops.xml'
