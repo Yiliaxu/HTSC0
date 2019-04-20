@@ -21,23 +21,23 @@ from NetLabels import *
 
 
 
-# SUMO_HOME = "/usr/local/bin/sumo"
-# tools = "/home/Arain/sumo-git/tools/"
-# sys.path.append(tools)
+SUMO_HOME = "/usr/local/bin/sumo"
+tools = "/home/Arain/sumo-git/tools/"
+sys.path.append(tools)
 
-# sumoBinary = "/usr/local/bin/sumo"
+sumoBinary = "/usr/local/bin/sumo"
 
-# sumoCmd = [sumoBinary, "-c", "HTSC"+str(demand_level)+".sumocfg","--seed", str(random.randint(1,100))]
+sumoCmd = [sumoBinary, "-c", "HTSC"+str(demand_level)+".sumocfg","--seed", str(random.randint(1,100))]
 
 
-if 'SUMO_HOME' in os.environ:
-    tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
-    sys.path.append(tools)
-else:
-    sys.exit("please declare environment variable 'SUMO_HOME'")
-sumoBinary = "E:/software/sumo-win64-0.32.0/sumo-0.32.0/bin/sumo-gui"
+# if 'SUMO_HOME' in os.environ:
+#     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+#     sys.path.append(tools)
+# else:
+#     sys.exit("please declare environment variable 'SUMO_HOME'")
+# sumoBinary = "E:/software/sumo-win64-0.32.0/sumo-0.32.0/bin/sumo-gui"
 
-sumoCmd = [sumoBinary, "-c", "HTSCN"+str(demand_level)+".sumocfg", "--seed", str(random.randint(1, 100))]
+# sumoCmd = [sumoBinary, "-c", "HTSCN"+str(demand_level)+".sumocfg", "--seed", str(random.randint(1, 100))]
 
 PORT = 8813
 import traci
@@ -595,4 +595,4 @@ if __name__ == '__main__':
                         for j in range(tc):
                             PhaseTime[junction_id][phasesequence][j * period:(j + 1) * period] = NewPhaseTime[k * tc + j] * np.ones(period)
 
-        ############
+        ########
