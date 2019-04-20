@@ -5,7 +5,7 @@ import math
 import numpy as np
 import pdb
 
-demand_level = [2,3,4,5,6,7,8]
+demand_level = [8,9]#2,3,4,5,6,7,
 
 # control_file = 'Actuated_ctrl.py'
 # control_file = 'Fix_ctrl.py'
@@ -39,6 +39,7 @@ def alter(file,i):
 
 file = './'+control_file
 for i in demand_level:
+	print i
 	f2 = alter(file,i)	
 	#execfile(f2)#+Bargaining
 
