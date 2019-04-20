@@ -5,12 +5,12 @@ import math
 import numpy as np
 import pdb
 
-demand_level = [8,9]#2,3,4,5,6,7,
+demand_level = [2,3,4,5,6,7,8,9]#
 
 # control_file = 'Actuated_ctrl.py'
 # control_file = 'Fix_ctrl.py'
-control_file = 'Hierarchical_ctrl.py'
-control_name = 'Hierarchical_ctrl'
+control_file = 'Hierarchical_ctrl_new.py'
+control_name = 'Hierarchical_ctrl_new'
 
 
 
