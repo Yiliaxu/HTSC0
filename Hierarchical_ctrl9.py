@@ -595,4 +595,40 @@ if __name__ == '__main__':
                         for j in range(tc):
                             PhaseTime[junction_id][phasesequence][j * period:(j + 1) * period] = NewPhaseTime[k * tc + j] * np.ones(period)
 
-      
+        ############################################################################################################################
+        ####################################-------------Implement the signal setting--------------###################################
+        if Counter == Tc:
+            Counter = 0
+            #### record the vehnum on each pahse every 60 seconds
+            period0 = i / Tc
+            for edge in AllEdgesList:
+                interval = VehNum_files.createElement('interval')
+                interval.setAttribute('begin', str(period0 * Tc))
+                interval.setAttribute('end', str((period0 + 1) * Tc))
+                interval.setAttribute('id', edge)
+                interval.setAttribute('vehnum', str(VehNumEdge[edge] / Tc))
+                # interval.setAttribute('Occupy',str(OccupyEdge[edge]/Tc))
+                VehNum.appendChild(interval)
+            VehNumEdge = defaultdict(lambda: 0)
+        # OccupyEdge = defaultdict(lambda:0)
+
+        for id in PhaseTime.keys():  ##PhaseTime={intersection_id:{phasesequence:[0 0 0 1 1 0 0]}}
+            PhaseNum = len(PhaseTime[id])
+            for phase in PhaseTime[id].keys():
+                # print Counter
+                if PhaseTime[id][phase][Counter] == 1:
+                    traci.trafficlights.setRedYellowGreenState(id, ActionInfo[id][phase - 1])
+                    break
+
+        Counter = Counter + 1
+
+    fp = open('./HTSCVehNum'+str(demand_level)+'.xml', 'w')
+
+    try:
+        VehNum_files.writexml(fp, indent='\t', addindent='\t', newl='\n', encoding="utf-8")
+    except:
+        trackback.print_exc()
+    finally:
+        fp.close()
+
+    traci.close()

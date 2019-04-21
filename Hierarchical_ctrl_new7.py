@@ -27,7 +27,7 @@ sys.path.append(tools)
 
 sumoBinary = "/usr/local/bin/sumo"
 
-sumoCmd = [sumoBinary, "-c", "HTSC"+str(demand_level)+".sumocfg","--seed", str(random.randint(1,100))]
+sumoCmd = [sumoBinary, "-c", "HTSCN"+str(demand_level)+".sumocfg","--seed", str(random.randint(1,100))]
 
 
 # if 'SUMO_HOME' in os.environ:

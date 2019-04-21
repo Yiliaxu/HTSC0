@@ -593,9 +593,7 @@ if __name__ == '__main__':
                         junction_id = NetInfoS[zone]['s' + str(k)][:-2]
                         phasesequence = int(NetInfoS[zone]['s' + str(k)][-1])
                         for j in range(tc):
-                            PhaseTime[junction_id][phasesequence][j * period:(j + 1) * period] = NewPhaseTime[
-                                                                                                     k * tc + j] * np.ones(
-                                period)
+                            PhaseTime[junction_id][phasesequence][j * period:(j + 1) * period] = NewPhaseTime[k * tc + j] * np.ones(period)
 
         ############################################################################################################################
         ####################################-------------Implement the signal setting--------------###################################

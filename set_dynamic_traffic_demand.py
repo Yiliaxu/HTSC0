@@ -5,7 +5,7 @@ import random
 
 period_num = 1
 period = 3600
-demand_level = 8
+demand_level = 12
 
 # Flow_net = etree.parse('D:\\Journal_paper\\hierarchical control based on Markov decision process and path-based signal control\\simulation\\Chj_final.rou.xml')
 # FlowRoot = Flow_net.getroot()

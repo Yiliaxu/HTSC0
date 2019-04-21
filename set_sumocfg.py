@@ -4,8 +4,8 @@ import xml.dom.minidom as doc
 import random
 
  
-demand_level = 8
-MethodName = 'HTSCN'
+demand_level = 9
+MethodName = 'HTSC'
 
 ###loops
 loop_name = 'loops.xml'
